@@ -93,4 +93,13 @@ void deleteNode()
 		return;
 	}
 
+	current = START; // step 1 : start from the forst node
+	previous = NULL;
+
+	// Locate the node to be deleted
+	while (current != NULL && current->noMhs != rollNo)
+	{
+		previous = current;
+		current = current->next;
+	}
 	
