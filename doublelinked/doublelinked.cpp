@@ -126,3 +126,28 @@ void deleteNode()
 			current->next->prev = previous;
 	}
 }
+// Release the memory of the node marked as current
+void deleteCurrentNode(Node* current, int rollNo) {
+	delete current;
+	cout << "\x1b[32mRecord with roll number " << rollNo << " deleted\x1b[0m " << endl;
+}
+
+bool listEmpty()
+{
+	return (START == NULL);
+}
+
+void traverse() {
+	if (listEmpty())
+		cout << "\nList is empty" << endl;
+	else {
+		cout << "\nRecords in ascending order of roll number are : " << endl;
+		Node* currentNode = START; // step 1
+		while (currentNode != NULL) // step 2
+		{
+			cout << currentNode->noMhs << " " << currentNode->name << endl; // step 3
+			currentNode = currentNode->next; // next 4
+		}
+	}
+}
+
